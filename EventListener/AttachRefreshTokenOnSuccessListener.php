@@ -122,6 +122,10 @@ class AttachRefreshTokenOnSuccessListener
             $refreshToken->setRefreshToken();
             $refreshToken->setValid($datetime);
 
+            if(count($user->getDomains()) > 0){
+                $refreshToken->setDomain($user->getDomains()[0]->getPbxDomainUuid());
+            }
+
             $valid = false;
             while (false === $valid) {
                 $valid = true;

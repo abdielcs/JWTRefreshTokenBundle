@@ -72,6 +72,18 @@ interface RefreshTokenInterface
     public function getUsername();
 
     /**
+     * @return string
+     */
+    public function getDomain();
+
+    /**
+     * @param string $domain
+     *
+     * @return self
+     */
+    public function setDomain($domain);
+
+    /**
      * Check if is a valid refresh token.
      *
      * @return bool

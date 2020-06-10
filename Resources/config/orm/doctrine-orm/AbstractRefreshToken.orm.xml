@@ -9,5 +9,6 @@
         <field name="refreshToken" type="string" column="refresh_token" length="128" unique="true"/>
         <field name="username" type="string" length="255" column="username"/>
         <field name="valid" type="datetime"/>
+        <field name="domain" type="string" length="255" column="domain"/>
     </mapped-superclass>
 </doctrine-mapping>

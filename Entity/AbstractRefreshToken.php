@@ -41,6 +41,11 @@ abstract class AbstractRefreshToken implements RefreshTokenInterface
     private $valid;
 
     /**
+     * @var string
+     */
+    protected $domain;
+
+    /**
      * {@inheritdoc}
      */
     abstract public function getId();
@@ -127,6 +132,24 @@ abstract class AbstractRefreshToken implements RefreshTokenInterface
     public function isValid()
     {
         return $this->valid >= new \DateTime();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * @param string $domain
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
+
+        return $this;
     }
 
     /**
