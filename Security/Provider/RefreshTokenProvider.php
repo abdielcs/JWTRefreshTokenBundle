@@ -48,7 +48,7 @@ class RefreshTokenProvider implements UserProviderInterface
         $refreshToken = $this->refreshTokenManager->get($token);
 
         if ($refreshToken instanceof RefreshTokenInterface) {
-            return $refreshToken->getUsername();
+            return $refreshToken->getUsername() .':'.$refreshToken->getDomain();
         }
 
         return null;
