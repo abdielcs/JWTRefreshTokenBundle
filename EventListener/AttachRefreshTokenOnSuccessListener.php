@@ -123,7 +123,7 @@ class AttachRefreshTokenOnSuccessListener
             $refreshToken->setValid($datetime);
 
             if($user->getSelectedDomain() != null){
-                $refreshToken->setDomain($user->getSelectedDomain()->getPbxDomainUuid());
+                $refreshToken->setDomain($user->getSelectedDomain()->getDomain()->getDomainUuid());
             }
 
             $valid = false;
